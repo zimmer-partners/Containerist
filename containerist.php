@@ -31,14 +31,15 @@ function datespan($field_from, $field_to) {
     $tostamp = strftime($html_time_format, $to->getTimestamp());
     return "<time datetime=\"$fromstamp\">$fromprint</time> - <time datetime=\"$tostamp\">$toprint</time>";
   } else {
-    return datestamp($field);
+    return datestamp($field_from);
   }
 }
 
 // Output date field as HTML timestamp
 function datestamp($field, $variables = array()) {
-  $dateprint = strftime('%d.%m.%y', $field);
-  $datestamp = strftime('%Y-%m-%dT12:00:00', $field);
+  $from = new DateTime($field);
+  $dateprint = strftime('%d.%m.%y', $from->getTimestamp());
+  $datestamp = strftime('%Y-%m-%dT12:00:00', $from->getTimestamp());
   return "<time datetime=\"$datestamp\">$dateprint</time>";
 };
 
