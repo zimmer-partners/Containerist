@@ -1,4 +1,11 @@
 <?php
+  
+// ===================
+// = Model Registery =
+// ===================
+
+require_once(__DIR__ . '/models/containerist.php');
+$kirby->set('page::model', 'containerist', 'ContaineristPage');
 
 // =================
 // = Field Methods =
