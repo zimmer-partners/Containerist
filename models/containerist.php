@@ -4,7 +4,15 @@
 * Generic pseudo-abstract Kontainerist page model
 */
 class ContaineristPage extends Page {
-    
+  
+  // ===============
+  // = Constructor =
+  // ===============
+  
+  public function __construct($parent, $dirname) {
+    parent::__construct($parent, $dirname);
+  }
+  
   // =================
   // = Pseudo Fields =
   // =================
