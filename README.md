@@ -1,2 +1,2 @@
-# Containerist
-Kirby plugin for container-based websites based on Kirby’s structure fields.
+# Containerist for Kirbt
+Kirby plugin for container-based websites based [Containerist](http://containerist.org) from [Konstantin Weiß](http://konstantinweiss.com).
