@@ -82,7 +82,7 @@ class ContaineristPage extends Page {
         $toprint = strftime($print_date_format, $to->getTimestamp());
         $tostamp = strftime($html_time_format, $to->getTimestamp());
         return "<time datetime=\"$tostamp\">$toprint</time>";
-      }else if ($diff->m > 1) {
+      } else if (($diff->m == 1 && $diff->d > 0) || $diff->m > 1) {
         $print_date_format = '%B %Y';
       }
       $fromprint = strftime($print_date_format, $from->getTimestamp());
