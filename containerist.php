@@ -11,6 +11,15 @@ $kirby->set('page::model', 'containerist', 'ContaineristPage');
 // = Field Methods =
 // =================
 
+field::$methods['anchor'] = function($field, $variables = array()) {
+  if (!$field->empty()) {
+    return new Field($field->page(), $field->key() . '_anchor', '#' . str::slug($field));
+  } else {
+    return new Field($field->page(), $field->key() . '_anchor', '');
+  }
+  
+};
+
 // Loads and return a field snippet
 field::$methods['snippet'] = function($field, $variables = array()) {
   if (!$field->empty()) {
