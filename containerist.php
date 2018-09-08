@@ -11,11 +11,19 @@ $kirby->set('page::model', 'containerist', 'ContaineristPage');
 // = Field Methods =
 // =================
 
+field::$methods['slug'] = function($field, $variables = array()) {
+  if (!$field->empty()) {
+    return new Field($field->page, $field->key . '_anchor', str::slug($field->toString()));
+  } else {
+    return new Field($field->page, $field->key . '_anchor', '');
+  }
+  
+};
 field::$methods['anchor'] = function($field, $variables = array()) {
   if (!$field->empty()) {
-    return new Field($field->page(), $field->key() . '_anchor', '#' . str::slug($field));
+    return new Field($field->page, $field->key . '_anchor', '#' . str::slug($field->toString()));
   } else {
-    return new Field($field->page(), $field->key() . '_anchor', '');
+    return new Field($field->page, $field->key . '_anchor', '');
   }
   
 };
